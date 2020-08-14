@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--控制bean加载顺序，当一个bean想让另一个bean在它之前加载可以设置depends-on-->
+    <bean class="cn.tulingxueyuan.beans.User" id="user" depends-on="wife2"></bean>
+    <bean class="cn.tulingxueyuan.beans.Wife" id="wife2"></bean>
+
+    <!--懒加载测试,-->
+    <bean class="cn.tulingxueyuan.beans.Wife" id="wife" lazy-init="true"></bean>
+
+    <!--作用域scope
+        singleton（单例）默认值 同一个id只会同时创建一个bean
+        prototype（多例）每使用一次都会创建一个bean
+    -->
+    <bean class="cn.tulingxueyuan.beans.Person" id="person" scope="prototype"></bean>
+</beans>
