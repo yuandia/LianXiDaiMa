@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--<mapper namespace="com.example.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.bean.User">
+        <result column="id" jdbcType="BIGINT" property="id" />
+        <result column="user_name" jdbcType="VARCHAR" property="username" />
+        <result column="pass_word" jdbcType="VARCHAR" property="password" />
+    </resultMap>
+
+    <select id="findUserByName" resultMap="BaseResultMap">
+        select user_name,pass_word from user where user_name=#{username}
+    </select>
+
+    <select id="regist" resultMap="BaseResultMap">
+        insert into user values(#{id},#{username},#{password})
+    </select>
+
+    <select id="login" resultMap="BaseResultMap">
+        select id from user where user_name = #{username} and pass_word = #{password}
+    </select>
+</mapper>-->
