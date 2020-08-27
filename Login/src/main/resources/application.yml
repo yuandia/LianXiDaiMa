@@ -4,14 +4,25 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/Denglu?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/Denglu?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: root
   resources:
     static-locations: classpath:/templates  #访问静态页面
 
-#mybatis:
-  #mapper-locations: classpath:static/*Mapper.xml
+redis:
+  database: 0
+  host: 127.0.0.1
+  port: 6379
+  jedis:
+    pool:
+      max-active: 100
+      max-idle: 10
+      max-wait: 100000
+  timeout: 5000
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
 
 #logging:
   #level:

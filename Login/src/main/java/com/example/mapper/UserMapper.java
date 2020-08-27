@@ -14,27 +14,27 @@ public interface UserMapper {
      * @param username
      * @return
      */
-    @Select(value = "select user_name,pass_word from user where user_name=#{username}")
+    /*@Select("select user_name,pass_word from user where user_name=#{username}")
     @Results
             ({@Result(property = "username",column = "user_name"),
-                    @Result(property = "password",column = "pass_word")})
+                    @Result(property = "password",column = "pass_word")})*/
     User findUserByName(@Param("username") String username);
 
     /**
      * 注册  插入一条user记录
-     * @param user
+     * @param //user
      * @return
      */
-    @Insert("insert into user values(#{id},#{username},#{password})")
+    //@Insert("insert into user values(#{id},#{username},#{password})")
     //加入该注解可以保存对象后，查看对象插入id
-    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    //@Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     void regist(User user);
 
     /**
      * 登录
-     * @param user
+     * @param //user
      * @return
      */
-    @Select("select id from user where user_name = #{username} and pass_word = #{password}")
-    Long login(User user);
+    //@Select("select id from user where user_name = #{username} and pass_word = #{password}")
+    Integer login(User user);
 }
